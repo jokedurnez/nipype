@@ -52,12 +52,12 @@ set fmri(multiple) 1
 # Higher-level input type
 # 1 : Inputs are lower-level FEAT directories
 # 2 : Inputs are cope images from FEAT directories
-set fmri(inputtype) 1
+set fmri(inputtype) 2
 
 # Carry out pre-stats processing?
 set fmri(filtering_yn) 0
 
-# Brain/background threshold, 
+# Brain/background threshold,
 set fmri(brain_thresh) 10
 
 # Critical z for design efficiency calculation
@@ -259,7 +259,7 @@ set fmri(regstandard_dof) 0
 set fmri(regstandard_nonlinear_yn) 0
 
 # Control nonlinear warp field resolution
-set fmri(regstandard_nonlinear_warpres) 10 
+set fmri(regstandard_nonlinear_warpres) 10
 
 # High pass filter cutoff
 set fmri(paradigm_hp) $high_pass_filter_cutoff
