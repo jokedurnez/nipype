@@ -25,15 +25,13 @@
 # CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
 #
 # Based on https://github.com/poldracklab/fmriprep/blob/9c92a3de9112f8ef1655b876de060a2ad336ffb0/Dockerfile
 #
 FROM nipype/base:latest
 MAINTAINER The nipype developers https://github.com/nipy/nipype
 
-ARG PYTHON_VERSION_MAJOR=3
+ARG PYTHON_VERSION_MAJOR=2
 
 # Installing and setting up miniconda
 RUN curl -sSLO https://repo.continuum.io/miniconda/Miniconda${PYTHON_VERSION_MAJOR}-4.2.12-Linux-x86_64.sh && \
