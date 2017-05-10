@@ -17,21 +17,8 @@ if [ $file = $outfile ] ; then
   file=$tmpfile
 fi
 
-ftype=`printf "FsLRaNdOmfSlrAnDOMFsLRaNdOmfSlrAnDOMFsLRaNdOmfSlrAnDOMFsLRaNdOm" | cat - $file | file -`
-if [ `echo "$ftype" | grep -i "ascii text" | wc -w` -gt 0 ] ; then
-    if [ `echo "$ftype" | grep -i "CRLF line terminators" | wc -w` -gt 0 ] ; then
-	cat $file | tr -d '\r' > $outfile
-    elif [ `echo "$ftype" | grep -i "CR line terminators" | wc -w` -gt 0 ] ; then
-	cat $file | tr '\r' '\n' > $outfile
-    else
-	cp $file $outfile
-    fi
-else
-    echo "File $file is not a text file"
-    exit 1
-fi 
+cat $file | tr -d '\r' > $outfile
 
 if [ X$tmpfile != X ] ; then
     rm $tmpfile
 fi
-
