@@ -91,7 +91,10 @@ RUN cd /src/nipype && \
     pip install -e .[all] && \
     rm -rf ~/.cache/pip
 
-COPY ./fslFixText /usr/share/fsl/5.0/bin/fslFixText
+RUN apt-get update && \
+    apt-get install -y file && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /work/
 
